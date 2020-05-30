@@ -1,0 +1,55 @@
+.sudoku-table__wrapper {
+  position: relative;
+}
+
+.sudoku-table {
+  border-collapse: collapse;
+  border: 3px solid #000000;
+
+  background-color: #fbfbfb;
+
+  font-size: 0;
+  line-height: 0;
+}
+
+.sudoku-table--win {
+  .sudoku-cell {
+    background-color:fade(#0093FD, 9%);
+  }
+}
+
+.sudoku-row:nth-child(3n):not(:last-child) {
+  border-bottom: 3px solid #000000;
+}
+
+.sudoku-table__button {
+  position: absolute;
+
+  top: 0;
+  right: -25px;
+
+  transform: translateX(100%);
+
+  width: 50px;
+  height: 50px;
+
+  &:hover {
+    .sudoku-table__reload {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(0, 56, 253, 0.25);
+  }
+}
+
+.sudoku-table__reload {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.35s ease-in;
+  transform-origin: 49% 54.5%;
+}
